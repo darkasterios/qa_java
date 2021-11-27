@@ -16,7 +16,7 @@ public class LionTest {
 
     @Test
     public void testGetFood() throws Exception {
-        Lion lion = new Lion(feline);
+        Lion lion = new Lion(feline,"Самец");
         Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List <String> actual = lion.getFood();
         List<String> expected = List.of("Животные", "Птицы", "Рыба");
@@ -26,7 +26,7 @@ public class LionTest {
 
     @Test
     public void testGetKittens() throws Exception {
-        Lion lion = new Lion(feline);
+        Lion lion = new Lion(feline,"Самец");
         int actual = lion.getKittens();
         int expected = feline.getKittens();
 

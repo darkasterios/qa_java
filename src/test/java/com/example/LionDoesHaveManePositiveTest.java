@@ -3,11 +3,14 @@ package com.example;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.mockito.Mock;
+
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class LionDoesHaveManePositiveTest {
-
+    @Mock
+    Feline feline;
         private final String actual;
         private final boolean expected;
 
@@ -25,7 +28,7 @@ public class LionDoesHaveManePositiveTest {
         }
         @Test
         public void doesHaveManePositiveTest() throws Exception {
-            Lion lion = new Lion(actual);
+            Lion lion = new Lion(feline,actual);
             boolean actual = lion.doesHaveMane();
             assertEquals(expected,actual);
         }
